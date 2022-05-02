@@ -15,3 +15,5 @@ Input data for DWH is table with denormalized transactions info ([transactions_0
 ## Architecture
 
 Data schema and role of functions:
+
+<img src="Data_scheme.png" width="100%">
