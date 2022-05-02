@@ -42,7 +42,7 @@ select final_proj.fn_add_report_data('scd2');
 
 - to insert data for the last day from excel to denormalized table
 ```shell
-python insert_from_excel.py -f transactions_01052020.xlsx
+>>>python insert_from_excel.py -f transactions_01052020.xlsx
 ```
 - to add data in dim tables and fact_transactions
 ```sql
@@ -51,4 +51,15 @@ select final_proj.fn_normalize_transactions();
 - to add new frauds in data mart
 ```sql
 select final_proj.fn_add_report_data('scd1');
+```
+## Project setup
+
+- To establish a database [GreenPlum 4.3.15.0](https://network.pivotal.io/products/vmware-tanzu-greenplum#/releases/6120/file_groups/630) for VMware was used
+- Sql code was written in [DBeaver](https://dbeaver.io/)
+
+## Python requirements
+
+To install necessary packages in Python use:
+```shell
+>>>pip install -r requirements.txt
 ```
