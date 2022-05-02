@@ -26,7 +26,9 @@ Data schema and role of functions:
 ### Step-by-step loading data and building data mart in scd2 format:
 
 - to insert data for the last day from excel to denormalized table
-```python insert_from_excel.py -f transactions_01052020.xlsx```
+```shell 
+python insert_from_excel.py -f transactions_01052020.xlsx
+```
 - to add data in dim tables and fact_transactions
 ```sql
 select final_proj.fn_normalize_transactions();
