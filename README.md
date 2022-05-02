@@ -15,5 +15,30 @@ Input data for DWH is table with denormalized transactions info ([transactions_0
 ## Architecture
 
 Data schema and role of functions:
-
 <img src="Data_scheme.png" height='110%'>
+
+## Usage
+
+1) execute DDL.sql to create all necessary tables
+2) execute ETL.sql to declare final_proj.fn_normalize_transactions for normalizing data from final_proj.denormalized
+3) execute Report.sql to declare function for building data mart
+
+### Step-by-step loading data and building data mart in scd2 format:
+
+- to insert data for the last day from excel to denormalized table
+```python insert_from_excel.py -f transactions_01052020.xlsx```
+- to add data in dim tables and fact_transactions
+```PLSQL
+select final_proj.fn_normalize_transactions();
+```
+- to add new frauds in data mart
+select final_proj.fn_add_report_data('scd2');
+
+### Step-by-step loading data and building data mart in scd1 format:
+
+- to insert data for the last day from excel to denormalized table
+```python insert_from_excel.py -f transactions_01052020.xlsx```
+- to add data in dim tables and fact_transactions
+select final_proj.fn_normalize_transactions();
+- to add new frauds in data mart
+select final_proj.fn_add_report_data('scd1');
