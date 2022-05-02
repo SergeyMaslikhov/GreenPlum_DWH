@@ -27,6 +27,21 @@ Data schema and role of functions:
 
 - to insert data for the last day from excel to denormalized table
 ```shell 
+>>>python insert_from_excel.py -f transactions_01052020.xlsx
+```
+- to add data in dim tables and fact_transactions
+```sql
+select final_proj.fn_normalize_transactions();
+```
+- to add new frauds in data mart
+```sql
+select final_proj.fn_add_report_data('scd2');
+```
+
+### Step-by-step loading data and building data mart in scd1 format:
+
+- to insert data for the last day from excel to denormalized table
+```shell
 python insert_from_excel.py -f transactions_01052020.xlsx
 ```
 - to add data in dim tables and fact_transactions
@@ -34,13 +49,6 @@ python insert_from_excel.py -f transactions_01052020.xlsx
 select final_proj.fn_normalize_transactions();
 ```
 - to add new frauds in data mart
-select final_proj.fn_add_report_data('scd2');
-
-### Step-by-step loading data and building data mart in scd1 format:
-
-- to insert data for the last day from excel to denormalized table
-```python insert_from_excel.py -f transactions_01052020.xlsx```
-- to add data in dim tables and fact_transactions
-select final_proj.fn_normalize_transactions();
-- to add new frauds in data mart
+```sql
 select final_proj.fn_add_report_data('scd1');
+```
