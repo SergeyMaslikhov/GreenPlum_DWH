@@ -23,7 +23,7 @@ Data schema and role of functions:
 2) execute ETL.sql to declare final_proj.fn_normalize_transactions for normalizing data from final_proj.denormalized
 3) execute Report.sql to declare function for building data mart
 
-### Step-by-step loading data and building data mart in scd2 format:
+### Step-by-step loading data and building data mart from scd2 format:
 
 - to insert data for the last day from excel to denormalized table
 ```shell 
@@ -38,7 +38,7 @@ select final_proj.fn_normalize_transactions();
 select final_proj.fn_add_report_data('scd2');
 ```
 
-### Step-by-step loading data and building data mart in scd1 format:
+### Step-by-step loading data and building data mart from scd1 format:
 
 - to insert data for the last day from excel to denormalized table
 ```shell
@@ -51,6 +51,11 @@ select final_proj.fn_normalize_transactions();
 - to add new frauds in data mart
 ```sql
 select final_proj.fn_add_report_data('scd1');
+```
+### To visualize data mart use:
+
+```shell
+>>>python plot_report.py
 ```
 ## Project setup
 
