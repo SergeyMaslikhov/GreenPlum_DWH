@@ -11,3 +11,7 @@ Input data for DWH is table with denormalized transactions info ([transactions_0
 - Make transactions with an expired account
 - Make transactions in different cities within 1 hour
 - Attempt to select sums. Within 20 minutes, there are more than 3 operations with the following template - each subsequent one is less than the previous one, while all are rejected except last. The last operation (successful) in such a chain is considered fraudulent.
+
+## Architecture
+
+Data schema and role of functions:
