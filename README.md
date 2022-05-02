@@ -28,7 +28,7 @@ Data schema and role of functions:
 - to insert data for the last day from excel to denormalized table
 ```python insert_from_excel.py -f transactions_01052020.xlsx```
 - to add data in dim tables and fact_transactions
-```PLSQL
+```sql
 select final_proj.fn_normalize_transactions();
 ```
 - to add new frauds in data mart
